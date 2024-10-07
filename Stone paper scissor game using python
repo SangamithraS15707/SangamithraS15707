@@ -1,0 +1,35 @@
+import random
+def game():
+ user_choice=int(input("Enter your choice(1/2/3);1 is rock, 2 is paper, 3 is scissor:"))
+ if(user_choice==1):
+    user_choice="Rock"
+ elif(user_choice==2):
+    user_choice="Paper"
+ else:
+    user_choice="Scissor"
+ choices=["Rock","Paper","Scissor"]
+ com_choice=random.choice(choices)
+ print("Your choice is",user_choice,"\n","Computer choice is",com_choice)
+ if(user_choice==com_choice):
+    print("Match tie")
+ elif(user_choice=="Rock" and com_choice=="Paper"):
+    print("Paper covers Rock!! You lose!")
+ elif(user_choice=="Rock" and com_choice=="Scissor"):
+    print("Rock breaks the scissor!! You won!")
+ elif(user_choice=="Paper" and com_choice=="Rock"):
+    print("Paper covers Rock!! You win!")
+ elif(user_choice=="Paper" and com_choice=="Scissor"):
+    print("Scissor cuts Paper!! You lose!")
+ elif(user_choice=="Scissor" and com_choice=="Rock"):
+    print("Rock breaks the scissor!! You lose!")
+ else:
+    print("Scissor cuts Paper!! You won!")
+game()
+def replay():
+ rematch=int(input("Do you want to continue the game(1/2) ; 1 is Yes, 2 is No:"))
+ if(rematch==1):
+    game()
+    replay()
+ else:
+    print("Game Finished!")
+replay()
